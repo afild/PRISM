@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRISM Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="glass-header">
+        <h1>PRISM <span class="subtitle">Productivity & Labor Cost Intelligence</span></h1>
+        <div class="actions">
+            <button onclick="triggerEndOfMonth()">Run EOM Agents</button>
+            <button onclick="triggerBurnoutScan()" class="btn-warning">Scan Burnout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <!-- ROI & Productivity -->
+        <section class="glass-card">
+            <h2>Revenue & ROI per Employee</h2>
+            <div class="kpi-container">
+                <div class="kpi">
+                    <h3>Global Rev/Emp</h3>
+                    <p id="global-rev">$0.00</p>
+                </div>
+            </div>
+            <div class="list-container">
+                <ul id="roi-list">
+                    <!-- Loaded dynamically -->
+                </ul>
+            </div>
+            <button onclick="calculateProductivity()" class="action-btn">Update ROI</button>
+        </section>
+
+        <!-- Labor Cost Forecast -->
+        <section class="glass-card wide-card">
+            <h2>Labor Cost Forecast (12 Months)</h2>
+            <div class="chart-container">
+                <canvas id="forecastChart"></canvas>
+            </div>
+            <button onclick="generateForecast()" class="action-btn">Run ML Prophet</button>
+        </section>
+
+        <!-- Burnout Alerts -->
+        <section class="glass-card">
+            <h2>Burnout Risk Alerts</h2>
+            <div class="list-container warning-list">
+                <ul id="burnout-list">
+                    <!-- Loaded dynamically -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Smart Scheduler -->
+        <section class="glass-card">
+            <h2>Smart Scheduler (PuLP)</h2>
+            <div class="form-group">
+                <label>Target Date:</label>
+                <input type="date" id="schedule-date">
+                <label>Required Staff:</label>
+                <input type="number" id="required-staff" value="5">
+                <button onclick="optimizeSchedule()" class="action-btn">Optimize Shifts</button>
+            </div>
+            <div class="list-container">
+                <ul id="schedule-list">
+                    <!-- Loaded dynamically -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
