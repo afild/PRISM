@@ -29,4 +29,3 @@ def fetch_nova_revenue(month: str) -> float:
     except Exception as e:
         print(f"Erro ao acessar NOVA: {e}. Usando mock data.")
         return 150000.0 # Mock fallback caso NOVA nao exista no ambiente atual
-

@@ -9,4 +9,3 @@ def lookup_industry_benchmark(naics_code: str):
         "default": 150000.0
     }
     return benchmarks.get(naics_code, benchmarks["default"])
-

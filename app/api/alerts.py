@@ -15,4 +15,3 @@ def get_alerts():
 def run_burnout_analysis():
     result = analyze_burnout_risks()
     return result
-
