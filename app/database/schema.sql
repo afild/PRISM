@@ -65,4 +65,3 @@ CREATE TABLE IF NOT EXISTS burnout_alerts (
     status              TEXT DEFAULT 'open', -- open|reviewed|dismissed
     created_at          DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
