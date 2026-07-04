@@ -155,4 +155,3 @@ async function triggerEndOfMonth() {
     loadROI();
     loadAlerts();
 }
-
