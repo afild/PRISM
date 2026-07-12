@@ -61,4 +61,3 @@ def forecast_labor_costs(months_ahead: int = 12):
     conn.close()
 
     return {"status": "success", "forecast": results}
-
